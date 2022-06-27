@@ -1,0 +1,51 @@
+/*mapas*/
+$redes: (
+        twitter: rgb(72, 202, 228),  
+        facebook: rgb(2, 62, 138),
+        instagram: rgb(214, 40, 40),    
+
+);
+
+@each $red, $color in $redes{
+    .btn--#{$red}{
+        background-color: $color;
+    }
+}
+
+/*extend*/
+
+.redSocial{
+    border:3px solid blueviolet;
+    background-color: rgb(228, 186, 109);
+}
+
+.redsocial--social{
+    @extend .redSocial;
+    color: black;
+    border-radius: 5px;
+}
+
+.redsocial--otra{
+    @extend .redSocial;
+    color: blue;
+    border: 3px dotted rgb(151, 46, 65);
+
+}
+
+.redsocial--nueva{
+    @extend .redSocial;
+    color: red;
+    border: 3px dashed black
+}
+
+/*mixin*/
+
+@mixin sizes ($width, $height){
+    height: $height;
+    width: $width;
+
+}
+.mixin_title{
+    @include sizes (100%, 75px);
+    background-color: rgb(154, 140, 152);
+}
